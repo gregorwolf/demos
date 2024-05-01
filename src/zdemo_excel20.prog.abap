@@ -5,6 +5,8 @@
 *--------------------------------------------------------------------*
 REPORT zdemo_excel20.
 
+PARAMETERS: lv_lines TYPE i DEFAULT 10.
+
 *----------------------------------------------------------------------*
 *       CLASS lcl_handle_events DEFINITION
 *----------------------------------------------------------------------*
@@ -60,7 +62,7 @@ START-OF-SELECTION.
   SELECT *
       INTO TABLE gt_sbook[]
       FROM sbook                                        "#EC CI_NOWHERE
-      UP TO 10 ROWS.
+      UP TO lv_lines ROWS.
 
 * Display ALV
 * ------------------------------------------
